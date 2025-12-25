@@ -5,8 +5,8 @@ setlocale(LC_ALL, 'en_EN.UTF8');
 # database setting
 $db_host         = 'localhost';
 $db_name         = 'websiam_adminVersion8';
-$db_user         = 'websiam_adminVersion8';
-$db_passwd         = '7P9PqHgkd4BjCccKBwm7';
+$db_user         = 'root';
+$db_passwd         = '123';
 
 # ให้กำหนดเป็น on เมื่อติดตั้ง admweb แล้วหากยังไม่ได้ติดตั้งต้องกำหนด off เท่านั้น
 define("_IS_COOKIE_LOGIN_TIME_", 'off');
