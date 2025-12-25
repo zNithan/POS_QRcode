@@ -2,8 +2,6 @@
 include 'admweb/mainApi.php';
 include 'admweb/api/oApi.php';
 
-#SEO REDIRECT 301
-SEORedir301();
 
 if (@$_GET['lang'] != '' && in_array($_GET['lang'], array('en', 'th'))) {
 	$lang = $_REQUEST['lang'];
