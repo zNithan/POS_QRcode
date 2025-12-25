@@ -1,0 +1,26 @@
+RewriteEngine On
+RewriteBase /
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+# Redirect /xxx/ to /xxx (ตัด / ท้ายออก)
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !=/
+RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+# อย่าแตะไฟล์หรือโฟลเดอร์จริง
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# ยกเว้น backend
+RewriteCond %{REQUEST_URI} !^/admweb/
+
+# ส่งทุกอย่างเข้า index.php โดยไม่ส่ง query string
+RewriteRule ^ index.php [L]
+
+# ป้องกันการเข้าถึงไฟล์สำคัญ
+<FilesMatch "(\.env|\.git|config\.php|composer\.json|composer\.lock)">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ป้องกันการเปิดดู directory (directory listing)
+Options -Indexes

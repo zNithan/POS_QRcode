@@ -1,0 +1,2 @@
+<link href="<?php echo TEMPLATE_URL; ?>/plugins/fullcalendar/fullcalendar.min.css?<?php echo CACHE_VERSION; ?>" rel="stylesheet">
+<link href="<?php echo TEMPLATE_URL; ?>/plugins/fullcalendar/nifty-skin/fullcalendar-nifty.min.css?<?php echo CACHE_VERSION; ?>" rel="stylesheet">
