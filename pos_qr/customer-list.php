@@ -1,4 +1,21 @@
-<?php include 'partials/main.php' ?>
+<?php 
+include 'inc.php';
+
+$ac = @$_GET['ac'];
+if ($ac == 'update') {
+    $name = @$_POST['name'];
+     $id = @$_POST['id'];
+     $email = @$_POST['email'];
+
+
+     header("Location: admweb/index.php");
+exit;
+}
+
+
+include 'partials/main.php';
+
+ ?>
 
 <head>
     <?php
@@ -48,6 +65,9 @@
                             </div>
                         </div>
                     </div>
+                    <?php 
+                    if ($oUser->status == 'member') {
+                    ?>
                     <div class="col-md-6 col-xl-3">
                         <div class="card">
                             <div class="card-body">                                
@@ -68,6 +88,7 @@
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
 
                     <div class="col-md-6 col-xl-3">
                         <div class="card">
@@ -156,6 +177,9 @@
                                                   </tr>
                                              </thead>
                                              <tbody>
+                                                  <?php 
+                                                  $customers = DB_LIST('member');
+                                                  foreach ($customers as $customer) { ?>
                                                   <tr>
                                                        <td>
                                                             <div class="form-check">
@@ -178,7 +202,7 @@
                                                             </div>
                                                        </td>
                                                   </tr>
-
+                                                  <?php } ?>
                                                   <tr>
                                                        <td>
                                                             <div class="form-check">
