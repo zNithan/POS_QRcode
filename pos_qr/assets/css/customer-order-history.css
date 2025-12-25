@@ -1,0 +1,257 @@
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Header */
+.history-header {
+    background: white;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.back-btn:active {
+    background: #f0f0f0;
+}
+
+/* Content */
+.history-content {
+    padding: 1rem;
+}
+
+/* Order card */
+.order-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-id {
+    font-weight: 700;
+    color: #333;
+    font-size: 1rem;
+}
+
+.order-status {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.status-pending {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.status-cooking {
+    background: #fce4ec;
+    color: #c2185b;
+}
+
+.status-served {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.order-time {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 0.75rem;
+}
+
+/* Order items */
+.order-items {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.item-notes {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 0.25rem;
+}
+
+.item-qty-price {
+    text-align: right;
+    font-size: 0.9rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background: #667eea;
+    color: white;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.total-label {
+    font-size: 0.95rem;
+}
+
+.total-amount {
+    font-size: 1.1rem;
+}
+
+/* Status badge with animation */
+.status-animation {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Empty state */
+.empty-state {
+    text-align: center;
+    padding: 2rem 1rem;
+    color: #999;
+}
+
+.empty-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.order-new-btn {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 0.75rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Timeline indicator */
+.order-timeline {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.timeline-step {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+    background: #f8f9fa;
+    border-radius: 6px;
+    color: #999;
+}
+
+.timeline-step.active {
+    background: #e3f2fd;
+    color: #2196f3;
+    font-weight: 600;
+}
+
+/* Auto-refresh indicator */
+.auto-refresh-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #e3f2fd;
+    border-left: 4px solid #2196f3;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #1565c0;
+}
+
+.refresh-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #2196f3;
+    border-radius: 50%;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25% { opacity: 0.5; }
+}
+
+@media (max-width: 480px) {
+    .history-content {
+        padding: 0.75rem;
+    }
+
+    .order-card {
+        padding: 0.75rem;
+    }
+}
